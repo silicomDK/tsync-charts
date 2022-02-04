@@ -1,0 +1,98 @@
+NodeName: worker2
+EnableGPS: true
+NodeSelectors:
+  sts.silicom.com/config: "gm-1"
+Images:
+  Tsyncd: quay.io/silicom/tsyncd:2.1.0.0
+  Ts2Phcs: quay.io/silicom/ts2phcs:1.0.0
+  Phcs2Sys: quay.io/silicom/phcs2sys:3.1.1
+  GrpcTsyncd: quay.io/silicom/grpc-tsyncd:2.1.0.0
+  StsPlugin: quay.io/silicom/sts-plugin:0.0.2
+  Gpsd: quay.io/silicom/gpsd:3.23.1
+GrpcSvcPort: 50051
+GpsSvcPort: 2947
+Configuration: |
+  profileID = 2
+  nicStr1 = enp101s0f0
+  slavePortMask = 0xfff
+  masterPortMask = 0xfff
+  syncePortMask = 0xfff
+  ipv6PortMask = 0xfff
+  IPCServer = 1
+  domainNum = 24
+  forwardable = 0
+  twoStep = 0
+  priority2 = 128
+  modePPS = 2
+  srcPPS = 1
+  mode10MHz = 2
+  src10MHz = 1
+  synceRecClkPort = 0
+  phyLedsCtl = 0
+  freqCat = 3
+  hoSpecDuration = 3600
+  syncOption = 1
+  esmcMode = 2
+  ssmMode = 1
+  qlEnable1 = 1
+  ql1 = 4
+  synceCpu = 10
+  gnssSigGpsEn = 1
+  gnssSigGpsL1CAEn = 1
+  gnssSigGpsL2CEn = 1
+  gnssSigSBASEn = 1
+  gnssSigSBASL1CAEn = 0
+  gnssSigGalEn = 1
+  gnssSigGalE1En = 1
+  gnssSigGalE5BEn = 1
+  gnssSigBDSEn = 1
+  gnssSigBDSB1En = 1
+  gnssSigBDSB2En = 1
+  gnssSigQZSSEn = 1
+  gnssSigQZSSL1CAEn = 1
+  gnssSigQZSSL1SEn = 0
+  gnssSigQZSSL2CEn = 1
+  gnssSigGLOEn = 1
+  gnssSigGLOL1En = 1
+  gnssSigGLOL2En = 1
+  gnssCableDelay = 50
+  gnssPulseDef = 1
+  gnssPulseLenDef = 0
+  gnssTP1En = 1
+  gnssFreqTP1 = 1
+  gnssFreqLockTP1 = 1
+  gnssUseLockTP1 = 1
+  gnssDutyTP1 = 0
+  gnssDutyLockTP1 = 10
+  gnssTP2En = 1
+  gnssFreqTP2 = 10000000
+  gnssFreqLockTP2 = 10000000
+  gnssUseLockTP2 = 1
+  gnssDutyTP2 = 0
+  gnssDutyLockTP2 = 50
+  gnssMinElev = 5
+  gnssMinSatSig = 9
+  gnssMsgNmeaUsb = 7
+  gnssMsgUbxUsb = 0
+  gnssIntfDetect = 1
+  gnssAntSet = 2
+  gnssRecvTMode = 1
+  gnssSvinMinDur = 120
+  gnssSvinAccLimit = 100000
+  gnssLockMode = 1
+  gnssLockTh = 100
+  gnssClockOutEn = 1
+  swTimestamp = 0
+  inbandMode = 1 
+  dumpMode = 0
+  getRawTs = 0
+  countDelay = 0
+  dataDelay = 0
+  statDelay = 0
+  aprLevel = 0
+  traceModule = 23
+  traceLevel = 0
+  tracePtpMsg = -1
+  whenWriteLog = 0
+  taccLogEn = 0
+  debugAPI = 0
