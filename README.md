@@ -1,4 +1,11 @@
 # tsync-charts
+* The daemonsets need the correct nodeSelector labels 
+  * Which nodes have the cards. (example: pci.sts.silicom.com/card: "true").
+* The daemonsets pods need privileged rights.
+
+These default values are in values.yaml
+
+## Overview
 
 * Unique services need to be created for each node, or use localhost, and don't use service (already has hostNetwork).
 * Helm does not allow for receiving all nodes with label, then creating objects accordingly, so again, the values file need to be paramatized.
