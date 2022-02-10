@@ -5,7 +5,7 @@ VERSION 		:= 0.0.1
 
 .PHONY: package helm clean chart
 
-all: package
+all: package chart
 
 package:
 	cd charts/$(PACKAGE_NAME)-0.0.1 && $(HELM) package . -d $(shell pwd)
@@ -13,7 +13,7 @@ package:
 helm:
 	-rm -rf bin
 	mkdir -p bin
-	curl -sL https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz -o bin/helm.tar.gz
+	curl -sL https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz -o bin/helm.tar.gz
 	tar xvf bin/helm.tar.gz -C bin
 	chmod +x bin/linux-amd64/helm
 
