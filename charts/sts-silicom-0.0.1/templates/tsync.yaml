@@ -277,4 +277,3 @@ spec:
           hostPath:
             path: /dev
 {{end}}
-{{end}}
